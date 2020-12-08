@@ -1,0 +1,99 @@
+body {
+  background-color: #aeb8fe;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dice,
+.one,
+.two,
+.three,
+.four,
+.five,
+.six,
+.number {
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+  background-color: #efe5dc;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.number {
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+}
+
+.dot {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 15px;
+  background-color: black;
+  margin: 5px;
+  visibility: hidden;
+}
+
+/*  dice one */
+
+.middle .dot:nth-of-type(2) {
+  visibility: visible;
+}
+
+/*  dice  two */
+
+.two > .start :nth-of-type(1),
+.two > .end :nth-of-type(3) {
+  visibility: visible;
+}
+
+.two > .middle .dot:nth-of-type(2) {
+  visibility: hidden;
+}
+
+/*  dice  three */
+
+.three > .start :nth-of-type(1),
+.three > .middle :nth-of-type(2),
+.three > .end :nth-of-type(3) {
+  visibility: visible;
+}
+
+/*  dice four */
+
+.four .dot {
+  visibility: visible;
+}
+
+.four .start .dot:nth-of-type(2),
+.four .middle .dot,
+.four .end .dot:nth-of-type(2) {
+  visibility: hidden;
+}
+
+/* dice five */
+
+.five .dot,
+.five .middle .dot:nth-of-type(2) {
+  visibility: visible;
+}
+
+.five .start .dot:nth-of-type(2),
+.five .middle .dot,
+.five .end .dot:nth-of-type(2) {
+  visibility: hidden;
+}
+
+/* dice six */
+
+.six .dot {
+  visibility: visible;
+}
+
+.six .middle .dot {
+  visibility: hidden;
+}

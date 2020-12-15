@@ -142,3 +142,44 @@ const dogFactory = (name , breed, weight) => {
    }
  }
 }
+// Factorial
+let factorial = (num) => {
+  let val = 1;
+  for(let i = num; i > 0 ; i--) {
+    val *= i;
+    return val;
+  }
+}
+// SubLength
+function subLength(str, char) {
+  let count = 0;
+  let initPosition;
+  let lastPosition;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === char) {
+      count++
+      if (count > 2) {
+        return 0;
+      }
+      if (initPosition === undefined) {
+        initPosition = i
+      } else {
+        lastPosition = i+1
+      }
+    }
+  }
+  return count < 2 ? 0 : lastPosition - initPosition;
+}
+// ListLength
+const groceries = list => {
+  let listString = ''
+  for (let i=0; i<list.length; i++) {
+    listString += list[i].item;
+    if (i < list.length - 2) {
+      listString += ', ';
+    } else if (i == list.length - 2){
+      listString += ' and ';
+    }
+  }
+  return listString;
+}
